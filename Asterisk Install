@@ -1,0 +1,23 @@
+Installing Asterisk: 
+Download Linux Flavor, from from http://releases.ubuntu.com/16.04
+The Linux installation is out of the scope of this training. Linux basic knowledge is prerequisite for this training.
+Step 2: Install the dependencies
+apt-get install bison wget openssl libssl-dev libasound2-dev libc6-dev libxml2-dev libsqlite3-dev libnewt-dev libncurses5-dev zlib1g-dev gcc g++ make perl uuid-dev git subversion libjansson-dev unixodbc-dev unixodbc-bin unixodbc
+Step 3: Download the source code
+cd /usr/src
+wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-15-current.tar.gz
+tar -xzvf asterisk-15-current.tar.gz 
+Step 4: Compile Asterisk
+cd asterisk*
+./configure
+make && make install && make config && make samples
+Step 5: Test if Asterisk is running
+asterisk –vvvvvvvvgc
+Step 6: Stop the Asterisk process using:
+cli>core stop now
+Step 7: To start Asterisk in background use:
+asterisk
+Step 8: To connect to the Asterisk Console running on background use
+asterisk -r
+Solving problems
+The most common error on the process is to forget one of the dependencies
